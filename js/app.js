@@ -251,7 +251,334 @@ const thomsCloset = [
   ]
 ];
 
-console.log(`Kristyn is rocking ${kristynsCloset[2]} today!`);
+console.log(`Kristyn is rocking ${kristynsCloset[2]} today`);
+
+kristynsCloset.shift();
+
+console.log(kristynsCloset);
+kristynsCloset.splice(5, 0, "raybans");
+console.log(kristynsCloset);
+kristynsCloset[5] = "stained knit hat";
+console.log(kristynsCloset);
+
+
+console.log(`Thome is looking fierce in a ${thomsCloset[0][0]} , ${thomsCloset[1][1]} and ${thomsCloset[2][1]} .`);
+
+thomsCloset[1][2] = "footie pajamas";
+
+console.log(thomsCloset);
+
+// print greeting
+
+
+const printGreeting = (name) => {
+	return name;
+}
+
+console.log(`Hello there ${printGreeting("Slimer")}`);
+
+
+// reverse word order
+
+let reverseWord = "";
+const reverseWordOrder = (str) => {
+	 return str.split(" ").reverse(" ").join(" ");
+
+}
+
+console.log(reverseWordOrder("Ishmael me Call"));
+
+console.log(reverseWordOrder("I use Lancome on my comb"));
+
+
+// calculate
+
+let sumTotal = 0;
+const calculate = (num1, num2, operation) => {
+	if(operation === "add") {
+		return num1 + num2;
+
+	} else if (operation === "sub") {
+		return num1 - num2;
+
+	} else if (operation === "mult") {
+		return num1 * num2;
+
+	} else if (operation === "div") {
+		return num1 / num2;
+	} else if (operation === "exp") {
+		return Math.pow(num1, num2);
+
+	} else {
+		return false
+	}
+
+}
+
+console.log(calculate(4, 3, "exp"));
+
+// 1:
+
+const printCool = (name) => {
+	return `${name} is cool`;
+}
+
+console.log(printCool("Captain Reynolds"));
+
+
+// 2:
+
+const calculateCube = (num) => {
+	return num * num * num;
+
+}
+
+console.log(calculateCube(5));
+
+// 3:
+
+const isAVowel = (str) => {
+
+	if (str.toLowerCase() === "a" || str.toLowerCase() === "e" || str.toLowerCase() === "i" || str.toLowerCase() === "o" || str.toLowerCase() === "u") {
+		return true;
+	} else {
+		return false;
+	}
+
+}
+
+console.log(isAVowel("A"));
+
+// 4:
+
+
+const getTwoLengths = (str1, str2) => {
+	let lenghtArr = [];
+	lenghtArr.push(str1.length, str2.length);
+	return lenghtArr;
+
+}
+
+console.log(getTwoLengths("Hank", "Hippopopalous"));
+
+
+// 5:
+
+
+const getMultipleLengths = (arr) => {
+	let sumOfIndex = [];
+	for (i = 0; i < arr.length; i++) {
+		sumOfIndex.push(arr[i].length);
+		}
+		return sumOfIndex;
+}
+
+console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
+
+// 6:
+
+// still working on this
+
+const maxOfThree = (num1, num2, num3) => {
+	if (num1 > num2 && num1 > num3) {
+		return num1;
+
+	} else if (num2 > num1 && num2 > num3) {
+		return num2;
+
+	} else if (num3 > num1 && num3 > num2) {
+		return num3;
+	}
+
+}
+
+console.log(maxOfThree(4, 2, 6));
+
+
+// 7:
+
+// still working on this
+
+const printLongestWord = (arr) => {
+	let longestWord = "";
+	for (i = 0; i < arr.length; i++) {
+		if (arr[i].length >= longestWord.length) {
+			longestWord = arr[i];
+			if (longestWord.length === arr[i].length) {
+				longestWord = arr.length - 1;
+			}
+		}
+	
+	}
+
+	
+	return longestWord;
+}
+
+console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
+
+
+// 8:
+
+const transmogrify = (num1, num2, num3) => {
+
+let powerOf = 1;
+	for (i = 0; i < num3; i++) {
+		powerOf *= num1 * num2;
+
+	}
+	return powerOf;
+}
+
+console.log(transmogrify(5, 3, 2));
+
+
+// Objects
+
+// Syntax
+
+const me = {
+	name: "Ben",
+	age: 29,
+	email: "benjaminkaplanart@gmail.com",
+}
+
+
+console.log(me);
+
+console.log(me.name);
+
+me.age = 1000;
+
+console.log(me);
+
+me["place of residence"] = "columbus";
+console.log(me);
+
+
+// Slimer
+
+const monster = {
+   name: "Slimer",
+   color: "greenish",
+   type: "plasm or ghost or something",
+
+}
+
+console.log(monster.name);
+
+monster.type = "creature";
+
+monster["age"] = 6;
+
+console.log(monster);
+
+// ogres
+
+
+// still working on this
+
+
+const adventurer = {
+	name: "Buzz",
+	hitpoints: 42,
+	weapon: "Sword",
+	adventurerAttack() {
+		ogre.hitpoints -= 7;
+	}
+}
+
+const ogre = {
+	name: "grunt",
+	hitpoints: 51,
+	weapon: "Battle Axe",
+	ogreAttack() {
+		adventurer.hitpoints -= 4;
+	}
+}
+
+
+
+const fight = (input1, input2) => {
+	while (adventurer.hitpoints > 0 && ogre.hitpoints > 0) {
+		ogre.ogreAttack();
+		console.log(`${ogre.name} attacked ${adventurer.name} with his battle axe for 4 hitpoints.`);
+		adventurer.adventurerAttack();
+		console.log(`${adventurer.name} attacked ${ogre.name} with his sword for 7 hitpoints`);
+			if (adventurer.hitpoints === 0 || ogre.hitpoints === 0) {
+				console.log("Game over!")
+
+			}
+		}
+}
+
+console.log(fight(adventurer, ogre));
+
+
+
+// Cat Combinator
+
+const mamaCat = {
+	name: "Mildred",
+	breed: "Tabby",
+	age: 12,
+}
+
+
+const papaCat = {
+	name: "Taco",
+	breed: "Sphinx",
+	age: 2,
+}
+
+
+
+const combineCats = (mama, papa) => {
+	let combinedCats = []
+	combinedCats.push(mama, papa);
+	return combinedCats;
+}
+
+console.log(combineCats(mamaCat, papaCat));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
