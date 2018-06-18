@@ -404,9 +404,9 @@ const printLongestWord = (arr) => {
 	for (i = 0; i < arr.length; i++) {
 		if (arr[i].length >= longestWord.length) {
 			longestWord = arr[i];
-			if (longestWord.length === arr[i].length) {
-				longestWord = arr.length - 1;
-			}
+		} else if (longestWord.length === arr[i].length) {
+			longestWord = arr[i - 1];
+
 		}
 	
 	}
